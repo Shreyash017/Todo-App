@@ -15,11 +15,12 @@ A simple Todo application built with Django that allows users to add, update, de
 
 ## Steps to step-up and run
 ```bash
-git clone https://github.com/yourusername/django-todo-app.git
-cd django-todo-app
+git clone https://github.com/Shreyash017/Todo-App.git
+cd Todo-App
 pip install pipenv
 pipenv install
 pipenv shell
+pip install django
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
