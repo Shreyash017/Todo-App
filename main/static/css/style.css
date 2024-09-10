@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    font-family: Montserrat;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+main {
+    /* height: 470px; */
+    margin-bottom: 60px;
+}
+
+.home-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 175px;
+    padding-bottom: 155px;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 70px;
+    border-radius: 40px;
+    background-color: red;
+    color: whitesmoke;
+}
+
+
+footer {
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+footer h1 {
+    font-size:larger;
+    font-style: italic;
+}

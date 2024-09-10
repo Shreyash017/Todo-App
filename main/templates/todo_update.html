@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="todo-div">
+    <div class="todo-head">
+        <h1>Edit Todo</h1>
+    </div>
+
+    <div class="form-container">
+        {% if error %}
+        <p class="error-message">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="{{ todo.title }}" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required>{{ todo.description }}</textarea>
+
+            <label for="completed">
+                <input type="checkbox" id="completed" name="completed" {% if todo.completed %}checked{% endif %}>
+                Completed
+            </label>
+
+            <button type="submit">Update Todo</button>
+        </form>
+    </div>
+
+    <a href="{% url 'todoList' %}">
+        <button type="button">
+            Back to Todo List
+        </button>
+    </a>
+</div>
+
+{% endblock %}

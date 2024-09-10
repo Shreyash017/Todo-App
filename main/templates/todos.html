@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="todo-div">
+    <div class="todo-head">
+        <h1>Your Todos</h1>
+    </div>
+
+    <div class="todo-list">
+        <table border="1" class="content-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Completed</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for todo in todos %}
+                <tr>
+                    <td>{{ todo.title }}</td>
+                    <td>{{ todo.description }}</td>
+                    <td>
+                        {% if todo.completed %}
+                        Yes
+                        {% else %}
+                        No
+                        {% endif %}
+                    </td>
+                    <td><a href="{% url 'todoUpdate' todo.id %}">Edit</a></td>
+                    <td><a href="{% url 'todoDelete' todo.id %}">Delete</a></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No todos available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="todo-div">
+    <div class="todo-head">
+        <h1>Add Todos</h1>
+    </div>
+
+    <div class="todo-add form-container"> 
+        {% if error %}
+        <p class="error-message">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" required></textarea><br><br>
+
+            <button type="submit">Add Todo</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

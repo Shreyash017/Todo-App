@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+
+    <link rel="preload" as="style" href="{% static 'css/style.css' %}" onload="this.rel = 'stylesheet'" />
+
+    {% if css_file == "todos" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_todos.css' %}" />
+    {% elif css_file == "update" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_update.css' %}" />
+    {% endif %}
+</head>
+<body>
+    {% include 'partials/_header.html' %}
+    
+    <main>{% block content %} {% endblock %}</main>
+    
+    {% include 'partials/_footer.html' %}
+</body>
+</html>
