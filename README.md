@@ -1,6 +1,9 @@
 # Todo-App
 A simple Todo application built with Django that allows users to add, update, delete, and view todo items. The app includes validation and provides an easy-to-use interface for managing todos.
 
+## Live Website
+Check out the live version here: [Todo Application](https://shreyashsalunke.pythonanywhere.com/)
+
 ## Features
 - Create a new todo
 - Update an existing todo
